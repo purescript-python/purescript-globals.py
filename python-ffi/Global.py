@@ -13,7 +13,7 @@ isFinite = math.isfinite
 def readInt(radix):
     def ap(n):
         try:
-            return int(n, base=radix)
+            return float(int(str(int(float(n))), base=radix))
         except ValueError:
             return math.nan
 
