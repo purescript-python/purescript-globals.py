@@ -31,16 +31,15 @@ def unsafeToPrecision(digits):
 
 
 def unsafeDecodeURI(s):
-    return urllib.parse.unquote(str, safe="~@#$&()*!+=:;,.?/'")
+    return urllib.parse.unquote(s, errors="strict")
 
 
 def unsafeEncodeURI(s):
-    return urllib.parse.quote(str, safe="~@#$&()*!+=:;,.?/'")
-
+    return urllib.parse.quote(s, safe="~@#$&()*!+=:;,.?/'")
 
 def unsafeDecodeURIComponent(s):
-    return urllib.parse.unquote(str, safe="~()*!.'")
+    return urllib.parse.unquote(s, errors="strict")
 
 
 def unsafeEncodeURIComponent(s):
-    return urllib.parse.quote(str, safe="~()*!.'")
+    return urllib.parse.quote(s, safe="~()*!.'")

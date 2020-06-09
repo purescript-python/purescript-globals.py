@@ -76,19 +76,19 @@ def encdecURI(encdec):
 
 
 def decodeURI(s):
-    return urllib.parse.unquote(str, safe="~@#$&()*!+=:;,.?/'")
+    return urllib.parse.unquote(s, errors="strict")
 
 
 def encodeURI(s):
-    return urllib.parse.quote(str, safe="~@#$&()*!+=:;,.?/'")
+    return urllib.parse.quote(s, safe="~@#$&()*!+=:;,.?/'")
 
 
 def decodeURIComponent(s):
-    return urllib.parse.unquote(str, safe="~()*!.'")
+    return urllib.parse.unquote(s, errors="strict")
 
 
 def encodeURIComponent(s):
-    return urllib.parse.quote(str, safe="~()*!.'")
+    return urllib.parse.quote(s, safe="~()*!.'")
 
 
 _decodeURI = encdecURI(decodeURI)
