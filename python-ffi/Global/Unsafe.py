@@ -8,7 +8,7 @@ def unsafeStringify(x):
 
 def unsafeToFixed(digits):
     def n_(n):
-        f = r"{:0." + str(n) + r"f}"
+        f = r"{:0." + str(digits) + r"f}"
         return f.format(n)
 
     return n_
@@ -16,7 +16,7 @@ def unsafeToFixed(digits):
 
 def unsafeToExponential(digits):
     def n_(n):
-        f = r"{:" + str(n) + "." + str(n) + r"e}"
+        f = r"{:" + str(digits) + r"e}"
         return f.format(n)
 
     return n_
@@ -24,7 +24,7 @@ def unsafeToExponential(digits):
 
 def unsafeToPrecision(digits):
     def n_(n):
-        f = r"{:." + str(n) + r"e}"
+        f = r"{:." + str(digits) + r"e}"
         return f.format(n)
 
     return n_
