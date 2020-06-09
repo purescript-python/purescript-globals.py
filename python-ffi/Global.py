@@ -27,6 +27,29 @@ def readInt(radix):
 readFloat = float
 
 
+def unsafeToFixed(digits):
+    def n_(n):
+        f = r"{:0." + str(digits) + r"f}"
+        return f.format(n)
+
+    return n_
+
+
+def unsafeToExponential(digits):
+    def n_(n):
+        f = r"{:." + str(digits) + r"e}"
+        return f.format(n).replace("e-0", "e-").replace("e+0", "e+")
+
+    return n_
+
+
+def unsafeToPrecision(digits):
+    def n_(n):
+        raise NotImplementedError()
+
+    return n_
+
+
 def formatNumber(fmt):
     def ap(fail, succ, digits, n):
         try:
@@ -37,9 +60,9 @@ def formatNumber(fmt):
     return ap
 
 
-_toFixed = formatNumber("toFixed")
-_toExponential = formatNumber("toExponential")
-_toPrecision = formatNumber("toPrecision")
+_toFixed = formatNumber(unsafeToFixed)
+_toExponential = formatNumber(unsafeToExponential)
+_toPrecision = formatNumber(unsafeToPrecision)
 
 
 def encdecURI(encdec):
