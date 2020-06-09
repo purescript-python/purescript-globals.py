@@ -1,5 +1,6 @@
 import json
 import urllib.parse
+import re
 
 
 def unsafeStringify(x):
@@ -24,8 +25,7 @@ def unsafeToExponential(digits):
 
 def unsafeToPrecision(digits):
     def n_(n):
-        f = r"{:." + str(digits) + r"f}"
-        return f.format(n)
+        raise NotImplementedError()
 
     return n_
 
