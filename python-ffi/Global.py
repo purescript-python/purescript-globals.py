@@ -30,7 +30,7 @@ readFloat = float
 def formatNumber(fmt):
     def ap(fail, succ, digits, n):
         try:
-            return succ(n[format](digits))
+            return succ(fmt(n)(digits))
         except Exception as e:
             return fail(str(e))
 
