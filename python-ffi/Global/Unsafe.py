@@ -8,7 +8,7 @@ def unsafeStringify(x):
 
 def unsafeToFixed(digits):
     def n_(n):
-        f = r"{:" + str(n) + "." + str(n) + r"f}"
+        f = r"{:0." + str(n) + r"f}"
         return f.format(n)
 
     return n_
@@ -44,4 +44,3 @@ def unsafeDecodeURIComponent(s):
 
 def unsafeEncodeURIComponent(s):
     return urllib.parse.quote(str, safe="~()*!.'")
-
