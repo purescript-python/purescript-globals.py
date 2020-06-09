@@ -24,7 +24,7 @@ def unsafeToExponential(digits):
 
 def unsafeToPrecision(digits):
     def n_(n):
-        f = r"{:." + str(digits) + r"e}"
+        f = r"{:." + str(digits) + r"f}"
         return f.format(n)
 
     return n_
