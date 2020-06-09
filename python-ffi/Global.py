@@ -48,12 +48,6 @@ def encdecURI(encdec):
     return ap
 
 
-_decodeURI = encdecURI(decodeURI)
-_encodeURI = encdecURI(encodeURI)
-_decodeURIComponent = encdecURI(decodeURIComponent)
-_encodeURIComponent = encdecURI(encodeURIComponent)
-
-
 def decodeURI(s):
     return urllib.parse.unquote(str, safe="~@#$&()*!+=:;,.?/'")
 
@@ -68,3 +62,9 @@ def decodeURIComponent(s):
 
 def encodeURIComponent(s):
     return urllib.parse.quote(str, safe="~()*!.'")
+
+
+_decodeURI = encdecURI(decodeURI)
+_encodeURI = encdecURI(encodeURI)
+_decodeURIComponent = encdecURI(decodeURIComponent)
+_encodeURIComponent = encdecURI(encodeURIComponent)
