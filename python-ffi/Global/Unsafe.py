@@ -17,7 +17,7 @@ def unsafeToFixed(digits):
 def unsafeToExponential(digits):
     def n_(n):
         f = r"{:." + str(digits) + r"e}"
-        return f.format(n)
+        return f.format(n).replace("e-0", "e-").replace("e+0", "e+")
 
     return n_
 
