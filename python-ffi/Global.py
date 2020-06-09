@@ -53,7 +53,7 @@ def unsafeToPrecision(digits):
 def formatNumber(fmt):
     def ap(fail, succ, digits, n):
         try:
-            return succ(fmt(n)(digits))
+            return succ(fmt(digits)(n))
         except Exception as e:
             return fail(str(e))
 
